@@ -15,4 +15,3 @@ pipeline {
         }
     }
 }
-# test trigger
