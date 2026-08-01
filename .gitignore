@@ -2,6 +2,5 @@
 *.tfstate
 *.tfstate.backup
 .terraform/
-terraform.tfvars
 node_modules/
 backend.log
