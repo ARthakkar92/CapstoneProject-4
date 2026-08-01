@@ -75,3 +75,13 @@ resource "aws_iam_role_policy" "terraform_state_access" {
     ]
   })
 }
+
+resource "aws_iam_role_policy_attachment" "jenkins_ec2_full" {
+  role       = aws_iam_role.jenkins_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "jenkins_iam_full" {
+  role       = aws_iam_role.jenkins_role.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
