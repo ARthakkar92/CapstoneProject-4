@@ -14,5 +14,8 @@ resource "aws_instance" "jenkins" {
     volume_size = 20
   }
 
+  lifecycle {
+    ignore_changes = [user_data]
+  }
   tags = { Name = "${var.project_name}-jenkins-server" }
 }
