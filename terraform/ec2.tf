@@ -8,7 +8,6 @@ resource "aws_instance" "jenkins" {
   associate_public_ip_address = true
   iam_instance_profile = aws_iam_instance_profile.jenkins_profile.name
 
-  user_data = file("${path.module}/user-data.sh")
 
   root_block_device {
     volume_size = 20
