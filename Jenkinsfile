@@ -84,7 +84,7 @@ pipeline {
                     kubectl apply -f k8s/frontend/frontend.yaml
                     kubectl apply -f k8s/admin/admin.yaml
                     kubectl apply -f k8s/ingress/ingress.yaml
-
+                    kubectl apply -f k8s/hpa/backend-hpa.yaml
                     kubectl rollout restart deployment backend -n $NAMESPACE
                     kubectl rollout restart deployment frontend -n $NAMESPACE
                     kubectl rollout restart deployment admin -n $NAMESPACE
