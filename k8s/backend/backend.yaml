@@ -21,6 +21,13 @@ spec:
           env:
             - name: MONGODB_URI
               value: "mongodb://mongo:27017/shopnow"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
           readinessProbe:
             httpGet:
               path: /api/health
