@@ -249,16 +249,6 @@ kubectl apply -f k8s/ingress/ingress.yaml
 kubectl apply -f k8s/monitoring/grafana-ingress.yaml
 ```
 
----
-
-## Scope decisions
-
-- **Ansible was intentionally omitted** (confirmed with course instructor) — configuration management is covered via Terraform (infrastructure) and Docker (application runtime), achieving the same underlying goal without a redundant tool.
-- **Terraform is not run from Jenkins** (confirmed with course instructor) — Jenkins is scoped to application CI/CD only (build → push → deploy). Infrastructure changes are applied manually via Terraform CLI, which is also safer given how much infrastructure drift can occur (see `TROUBLESHOOTING.md`).
-- The Jenkins EC2 IAM role uses broad permissions (EC2, IAM, ECR, EKS, S3, CloudFormation full access) — appropriate for a self-contained lab environment. A production setup would scope these down to specific actions and resource ARNs.
-
----
-
 ## Screenshots
 
 | Area | Screenshot |
@@ -273,14 +263,11 @@ kubectl apply -f k8s/monitoring/grafana-ingress.yaml
 | Alert email received | `docs/screenshots/alert-email.png` |
 | GitHub webhook configuration | `docs/screenshots/github-webhook.png` |
 
-*(Add your own screenshots to `docs/screenshots/` with these filenames, or update the paths above to match what you use.)*
-
 ---
 
 ## Further reading
 
 - [`TESTING.md`](TESTING.md) — test cases covering application functionality, deployment integrity, and pipeline behavior
-- [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) — real problems encountered during this build (free-tier instance limits, EKS access-entry auth modes, nginx subpath routing, Alertmanager config gotchas) and how each was diagnosed and fixed
 
 ---
 
