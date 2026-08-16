@@ -178,7 +178,7 @@ Push a commit that intentionally breaks a pipeline stage (e.g. a syntax error in
 
 | Test | Date | Result | Notes |
 |---|---|---|---|
-| 1.1 Terraform state integrity |2026-08-16 |PASS |terraform plan shows no unexpected changes |
+| 1.1 Terraform state integrity |2026-08-16 |Pass |terraform plan shows no unexpected changes |
 | 2.1 Webhook trigger |2026-08-16 |Pass |Build auto-triggered on push, confirmed in Jenkins console log |
 | 2.2 Pipeline success |2026-08-16 |Pass |All stages green, Finished: SUCCESS |
 | 3.3 Frontend renders |2026-08-16 |Pass |Homepage loads with 6 products, no console errors |
