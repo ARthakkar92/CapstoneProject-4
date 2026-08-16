@@ -263,14 +263,11 @@ kubectl apply -f k8s/monitoring/grafana-ingress.yaml
 | Alert email received | `docs/screenshots/alert-email.png` |
 | GitHub webhook configuration | `docs/screenshots/github-webhook.png` |
 
-*(Add your own screenshots to `docs/screenshots/` with these filenames, or update the paths above to match what you use.)*
-
 ---
 
 ## Further reading
 
 - [`TESTING.md`](TESTING.md) — test cases covering application functionality, deployment integrity, and pipeline behavior
-- [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) — real problems encountered during this build (free-tier instance limits, EKS access-entry auth modes, nginx subpath routing, Alertmanager config gotchas) and how each was diagnosed and fixed
 
 ---
 
