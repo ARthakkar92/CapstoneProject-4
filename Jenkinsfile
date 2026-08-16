@@ -24,23 +24,6 @@ pipeline {
                 sh 'docker --version'
                 sh 'aws --version'
                 sh 'kubectl version --client'
-                sh 'terraform -version'
-            }
-        }
-
-        stage('Terraform Init') {
-            steps {
-                dir('terraform') {
-                    sh 'terraform init -input=false'
-                }
-            }
-        }
-
-        stage('Terraform Plan') {
-            steps {
-                dir('terraform') {
-                    sh 'terraform plan -input=false'
-                }
             }
         }
 
@@ -85,6 +68,7 @@ pipeline {
                     kubectl apply -f k8s/admin/admin.yaml
                     kubectl apply -f k8s/ingress/ingress.yaml
                     kubectl apply -f k8s/hpa/backend-hpa.yaml
+
                     kubectl rollout restart deployment backend -n $NAMESPACE
                     kubectl rollout restart deployment frontend -n $NAMESPACE
                     kubectl rollout restart deployment admin -n $NAMESPACE
