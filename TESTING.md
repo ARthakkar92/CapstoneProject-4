@@ -178,13 +178,13 @@ Push a commit that intentionally breaks a pipeline stage (e.g. a syntax error in
 
 | Test | Date | Result | Notes |
 |---|---|---|---|
-| 1.1 Terraform state integrity | | | |
-| 2.1 Webhook trigger | | | |
-| 2.2 Pipeline success | | | |
-| 3.3 Frontend renders | | | |
-| 3.4 Admin renders | | | |
-| 4.1 Pods healthy | | | |
-| 4.4 HPA responds | | | |
-| 5.3 Alert lifecycle | | | |
+| 1.1 Terraform state integrity |2026-08-16 |PASS |terraform plan shows no unexpected changes |
+| 2.1 Webhook trigger |2026-08-16 |Pass |Build auto-triggered on push, confirmed in Jenkins console log |
+| 2.2 Pipeline success |2026-08-16 |Pass |All stages green, Finished: SUCCESS |
+| 3.3 Frontend renders |2026-08-16 |Pass |Homepage loads with 6 products, no console errors |
+| 3.4 Admin renders |2026-08-16 |Pass |	Dashboard loads correctly at /admin/, no console errors |
+| 4.1 Pods healthy |2026-08-16 |Pass |	4/4 pods 1/1 Running |
+| 4.4 HPA responds |2026-08-16 |Pass |	kubectl get hpa shows real CPU percentage |
+| 5.3 Alert lifecycle |2026-08-16 |Pass |	DeploymentReplicasUnavailable fired and resolved, both emails received |
 
 *(Fill in dates/results when running through this checklist for final submission.)*
