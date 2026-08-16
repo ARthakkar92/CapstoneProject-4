@@ -49,7 +49,9 @@ Developer → GitHub → (webhook) → Jenkins (EC2)
                                    ▼
                                 Users
 
-                                <img width="1377" height="864" alt="image" src="https://github.com/user-attachments/assets/ec8f2708-8daf-4701-9404-98350f43059c" />
+
+<img width="1377" height="864" alt="image" src="https://github.com/user-attachments/assets/ca722774-3177-4b2f-99b1-a3fda1752775" />
+
 
 
 Terraform provisions: VPC, EC2 (Jenkins), EKS cluster + node group,
