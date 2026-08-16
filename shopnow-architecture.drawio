@@ -1,0 +1,119 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ShopNow Architecture" id="shopnow-arch">
+    <mxGraphModel dx="1288" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dev" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;" value="Developer" vertex="1">
+          <mxGeometry height="50" width="120" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="github" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;" value="GitHub&#xa;CapstoneProject-4" vertex="1">
+          <mxGeometry height="50" width="140" x="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jenkins" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;" value="Jenkins&#xa;EC2 (t3.small)" vertex="1">
+          <mxGeometry height="50" width="140" x="490" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ecr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;" value="Amazon ECR&#xa;3 repositories" vertex="1">
+          <mxGeometry height="50" width="140" x="670" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="terraform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;" value="Terraform&#xa;VPC, EC2, EKS, IAM" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;" value="S3 + DynamoDB&#xa;Terraform state/locking" vertex="1">
+          <mxGeometry height="50" width="140" x="280" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="aws" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=none;strokeColor=#888780;dashed=1;" value="AWS Cloud (ap-south-1)" vertex="1">
+          <mxGeometry height="480" width="900" x="30" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="eks" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=#E6F1FB;strokeColor=#185FA5;" value="EKS Cluster (Kubernetes 1.35)" vertex="1">
+          <mxGeometry height="380" width="500" x="80" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="ns" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=#FFFFFF;strokeColor=#378ADD;" value="namespace: shopnow" vertex="1">
+          <mxGeometry height="220" width="440" x="110" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;" value="frontend" vertex="1">
+          <mxGeometry height="40" width="100" x="130" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;" value="admin" vertex="1">
+          <mxGeometry height="40" width="100" x="130" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="mongo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEEDA;strokeColor=#854F0B;" value="mongo" vertex="1">
+          <mxGeometry height="40" width="100" x="270" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="mon-ns" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=#FFFFFF;strokeColor=#378ADD;" value="namespace: monitoring" vertex="1">
+          <mxGeometry height="80" width="440" x="110" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="prom" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBEAF0;strokeColor=#993556;" value="Prometheus + Grafana + Alertmanager" vertex="1">
+          <mxGeometry height="35" width="380" x="140" y="607.5" as="geometry" />
+        </mxCell>
+        <mxCell id="alb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#185FA5;" value="AWS Load Balancer&#xa;Controller + ALB Ingress" vertex="1">
+          <mxGeometry height="55" width="150" x="640" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;" value="Users" vertex="1">
+          <mxGeometry height="50" width="120" x="1000" y="382.5" as="geometry" />
+        </mxCell>
+        <mxCell id="email" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;" value="Email&#xa;(Gmail SMTP)" vertex="1">
+          <mxGeometry height="50" width="120" x="1000" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="dev" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="github">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="github" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="jenkins" value="webhook">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="jenkins" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="ecr" value="build + push">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="terraform" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="aws" value="provisions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="terraform" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="s3" value="state">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="jenkins" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="eks" value="deploy (kubectl apply)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="ecr" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="eks" value="pulls images">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="frontend" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="admin" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="backend" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="mongo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="eks" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="alb" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="prom" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;" target="eks" value="scrapes metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="backend" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;" target="jenkins" value="scrapes /prometheus">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="prom" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="email" value="alerts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8j-0OknL98pJ9kcsliCv-4" edge="1" parent="1" source="prom" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;" target="backend" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="615" as="sourcePoint" />
+            <mxPoint x="490" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="backend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;" value="backend&#xa;(HPA 1-4)" vertex="1">
+          <mxGeometry height="40" width="100" x="280" y="400" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
