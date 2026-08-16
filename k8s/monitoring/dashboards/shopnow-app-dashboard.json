@@ -89,6 +89,46 @@
       "gridPos": { "h": 7, "w": 12, "x": 12, "y": 20 },
       "targets": [{ "expr": "sum(rate(container_network_transmit_bytes_total{namespace=\"shopnow\"}[5m])) by (pod)", "legendFormat": "{{pod}}" }],
       "fieldConfig": { "defaults": { "unit": "Bps", "custom": { "drawStyle": "line", "fillOpacity": 10 } } }
+    },
+    {
+      "id": 11,
+      "title": "Jenkins Health Score",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 27 },
+      "targets": [{ "expr": "default_jenkins_builds_health_score{jenkins_job=\"capstone-devops-pipeline\"}", "legendFormat": "Health" }],
+      "fieldConfig": { "defaults": { "unit": "percent", "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "red", "value": 0 }, { "color": "yellow", "value": 50 }, { "color": "green", "value": 80 }] } } }
+    },
+    {
+      "id": 12,
+      "title": "Last Build Result",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 27 },
+      "targets": [{ "expr": "default_jenkins_builds_last_build_result{jenkins_job=\"capstone-devops-pipeline\"}", "legendFormat": "Success = 1" }],
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "red", "value": 0 }, { "color": "green", "value": 1 }] } } }
+    },
+    {
+      "id": 13,
+      "title": "Total Builds",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 27 },
+      "targets": [{ "expr": "default_jenkins_builds_available_builds_count{jenkins_job=\"capstone-devops-pipeline\"}", "legendFormat": "Builds" }],
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "blue", "value": 0 }] } } }
+    },
+    {
+      "id": 14,
+      "title": "Last Build Duration",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 27 },
+      "targets": [{ "expr": "default_jenkins_builds_last_build_duration_milliseconds{jenkins_job=\"capstone-devops-pipeline\"}", "legendFormat": "Duration" }],
+      "fieldConfig": { "defaults": { "unit": "ms", "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": 0 }] } } }
+    },
+    {
+      "id": 15,
+      "title": "Build Duration Trend",
+      "type": "timeseries",
+      "gridPos": { "h": 7, "w": 24, "x": 0, "y": 31 },
+      "targets": [{ "expr": "default_jenkins_builds_last_build_duration_milliseconds{jenkins_job=\"capstone-devops-pipeline\"}", "legendFormat": "{{jenkins_job}}" }],
+      "fieldConfig": { "defaults": { "unit": "ms", "custom": { "drawStyle": "line", "fillOpacity": 10 } } }
     }
   ]
 }
