@@ -4,7 +4,7 @@ A production-style CI/CD pipeline that builds, tests, deploys, and monitors a 3-
 
 ![Architecture](docs/screenshots/architecture-diagram.png)
 
----
+
 
 ## What this project demonstrates
 
@@ -15,11 +15,9 @@ A production-style CI/CD pipeline that builds, tests, deploys, and monitors a 3-
 - Full observability: Prometheus + Grafana dashboards, and email alerting tested end-to-end (alert fires → email arrives → alert resolves → resolution email arrives)
 - No static AWS credentials anywhere — Jenkins authenticates purely via an IAM role attached to its EC2 instance
 
----
 
 ## Architecture
 
-```
 Developer → GitHub → (webhook) → Jenkins (EC2)
                                      │
                           build + push Docker images
