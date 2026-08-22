@@ -1,3 +1,10 @@
+## Contributor
+1) Ankit Thakkar -- thakkarankit092@gmail.com
+2) Sankar Raj --  sankarrajsundaram@gmail.com
+3) Madhava Sai -- hanusaimadhava@gmail.com
+4) Rohan Vijay Mangate -- rvmangate@gmail.com
+5) Pragati Rahul Dhavale -- pragatigawde60@gmail.com
+
 # ShopNow — End-to-End AWS DevOps Pipeline (Capstone Project)
 
 A production-style CI/CD pipeline that builds, tests, deploys, and monitors a 3-tier e-commerce application on AWS EKS. Built as a hands-on capstone covering Terraform, Jenkins, Docker, Kubernetes, and Prometheus/Grafana.
